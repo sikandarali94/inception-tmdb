@@ -1,0 +1,149 @@
+/*****************************
+Variables *********************
+*****************************/
+:root {
+    --primary-color:#162930;
+    --primary-text-color:#E62030;
+    --secondary-text-color:#F2F2F2;
+    --minimum-height:900px; /* Minimum height of page display; This is for lower height displays */
+}
+
+/* Set box model type and baseline font size */
+* {
+    box-sizing:border-box;
+    font-size:20px; /* All fonts sizes will be relative to this through the em unit */
+}
+
+body {
+    overflow-x:hidden; /* To hide the horizontal scrollbar */
+}
+
+/* Showcase section that holds both the movie information sidebar and poster display section */
+.showcase {
+    display: none; /* Initially won't display until data has been received from HTTP request. */
+}
+
+/*****************************
+Movie Information Sidebar *********************
+*****************************/
+aside {
+    background-color: var(--primary-color);
+    min-height: var(--minimum-height) !important; /* For small height displays */
+    height:100vh;
+    padding:0 !important;
+    text-transform: uppercase;
+    position:relative;
+}
+
+h1 {
+    color:var(--primary-text-color) !important;
+    font-size:1.5em !important;
+    letter-spacing: 6px;
+}
+
+#data-container {
+    color:var(--secondary-text-color);
+    text-align:center;
+    position:absolute;
+    top:18%;
+    left:50%;
+    transform: translateX(-46%);
+}
+
+#movie-title {
+    margin-bottom:30px;
+}
+
+.credit {
+    margin-bottom:30px;
+}
+
+.movie-role {
+    font-size:0.8em;
+    font-weight: bold;
+    margin-bottom:5px;
+}
+
+ul {
+    padding:0;
+    margin-top:6px;
+}
+
+ul li {
+    list-style: none;
+    font-size:0.7em;
+    margin-bottom:5px;
+}
+
+/*****************************
+Poster Display Section *********************
+*****************************/
+#poster-backdrop {
+    position:relative;
+    padding:0;
+}
+
+#poster {
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-46%, -55%);
+    z-index:1;
+    width:365px;
+}
+
+#backdrop {
+    min-height: var(--minimum-height) !important;
+    height:100vh;
+    z-index:0;
+    background: url("../img/backdrop.jpg") top;
+    background-size:cover;
+}
+
+/*****************************
+Overlay Section *********************
+*****************************/
+#overlay {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('../img/pattern.png');
+    z-index: 3;
+}
+
+#error-message {
+    position: absolute;
+    display:none;
+    top:45%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:80%;
+    opacity:0.6;
+}
+
+#error-message h2 {
+    color:var(--primary-text-color);
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
+#loader {
+    position:absolute;
+    width:80px;
+    top:45%;
+    left:50%;
+    opacity:0.6;
+    transform: translate(-50%,-50%);
+}
+
+/*****************************
+Media Queries *********************
+*****************************/
+@media (max-width:600px) {
+    #poster {
+        width:250px;
+    }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="description" content="About the movie Inception">
+    <meta name="author" content="Sikandar Ali">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" >
+
+    <!-- Title -->
+    <title>Inception | The Movie Database</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- Grid System Only -->
+</head>
+<body>
+<!-- Showcase section that displays movie data. -->
+<div id="showcase" class="row">
+    <!-- Movie Information Sidebar -->
+    <!-- Animations trigger when display goes from none to block. -->
+    <aside id="info" class="col-lg-3 animated slower fadeIn">
+        <div id="data-container" class="animated fadeIn">
+            <!-- Movie Title -->
+            <h1 id="movie-title"></h1>
+            <!-- Cast and Crew Section -->
+            <div id="cast-crew-info">
+                <div class="credit">
+                    <p class="movie-role">Director</p>
+                    <!-- List elements will be dynamically inserted in list when required data has been received
+                     successfully -->
+                    <ul class="name-credits" id="director"></ul>
+                </div>
+                <div class="credit">
+                    <p class="movie-role">Main Cast</p>
+                    <ul class="name-credits" id="cast"></ul>
+                </div>
+                <div class="credit">
+                    <p class="movie-role">Writer</p>
+                    <ul class="name-credits" id="writer"></ul>
+                </div>
+                <div class="credit">
+                    <p class="movie-role">Producers</p>
+                    <ul class="name-credits" id="producers"></ul>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- Poster Display Section -->
+    <div id="poster-backdrop" class="col-lg-9">
+        <!-- Poster -->
+        <img id="poster" class="animated slower fadeIn" src="" alt="Inception Poster">
+        <section id="backdrop" class="animated fadeIn"></section>
+    </div>
+</div>
+<!-- Overlay section which remains until HTTP request has successfully returned data. -->
+<div id="overlay">
+    <!-- This error message displays if HTTP request has not successfully returned the required data. -->
+    <div id="error-message">
+        <h2>Oops, something went horribly wrong! Please refresh the page to try again. This time we'll make sure to
+        not put you in limbo.</h2>
+    </div>
+    <!-- Spinner GIF image that indicates that response from HTTP request has not come yet. -->
+    <img id="loader" src="img/loading.gif" rel="spinner-loading">
+</div>
+<script type="text/javascript" src="js/script.js"></script>
+</body>
